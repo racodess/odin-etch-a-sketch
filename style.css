@@ -5,6 +5,14 @@ body {
   align-items: center;
 }
 
+#sketch-container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 .row {
   display: flex;
 }
