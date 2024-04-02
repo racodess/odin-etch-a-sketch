@@ -13,6 +13,14 @@ for (let i = 0; i < 16; i++) {
     square.style.minHeight = "30px";
     square.style.minWidth = "30px";
 
+    square.addEventListener("mouseover", etch);
+
     row.appendChild(square);
   }
+}
+
+function etch(event) {
+  const square = event.target;
+
+  square.style.backgroundColor = "black";
 }
