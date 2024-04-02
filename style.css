@@ -2,7 +2,7 @@ body {
   margin: 0;
 }
 
-#sketch-container {
+.row {
   display: flex;
 }
 
