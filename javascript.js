@@ -24,6 +24,10 @@ function createPad(size) {
   }
 }
 
+function removePad() {
+  while (sketch.lastChild) sketch.removeChild(sketch.lastChild);
+}
+
 function etch(event) {
   const square = event.target;
 
@@ -43,5 +47,6 @@ function resize(event) {
     return;
   }
 
+  removePad();
   createPad(size);
 }
