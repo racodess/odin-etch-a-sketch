@@ -1,7 +1,7 @@
 const sketch = document.querySelector("#sketch-container");
 const sizeButton = document.querySelector("#size-button");
 
-createPad(16);
+createPad(64);
 
 sizeButton.addEventListener("click", resize);
 
