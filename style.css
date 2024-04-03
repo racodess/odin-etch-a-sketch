@@ -71,6 +71,15 @@ body {
     inset -4px -5px 7px rgb(0 0 0 / 50%);
 }
 
+#footer {
+  font-family: "Londrina Sketch", sans-serif;
+  font-size: 32px;
+}
+
+#footer img {
+  height: 30px;
+}
+
 .row {
   flex: auto;
   display: flex;
