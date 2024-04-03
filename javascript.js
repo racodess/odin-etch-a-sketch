@@ -1,9 +1,15 @@
 const sketch = document.querySelector("#sketch-container");
 const sizeButton = document.querySelector("#size-button");
+const opacityButton = document.querySelector("#opacity-button");
+let size = 32;
+let opacity = false;
 
-createPad(64);
+createPad(size);
 
 sizeButton.addEventListener("click", resize);
+opacityButton.addEventListener("click", () => {
+  opacity ? (opacity = false) : (opacity = true);
+});
 
 function createPad(size) {
   for (let i = 0; i < size; i++) {
@@ -18,7 +24,9 @@ function createPad(size) {
       square.setAttribute("class", "square");
 
       square.style.opacity = 1;
-      square.addEventListener("mouseover", etch);
+
+      if (opacity) square.addEventListener("mouseover", etchProgressive);
+      else square.addEventListener("mouseover", etch);
 
       row.appendChild(square);
     }
@@ -42,7 +50,7 @@ function etchProgressive(event) {
 }
 
 function resize(event) {
-  const size = Number(
+  size = Number(
     window.prompt(
       "Enter a new size for the sketch pad. Min: 16   Max: 100",
       16,
