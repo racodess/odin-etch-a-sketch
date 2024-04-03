@@ -10,9 +10,11 @@ sizeButton.addEventListener("click", resize);
 
 opacityButton.addEventListener("click", () => {
   opacity ? (opacity = false) : (opacity = true);
+  createPad(size);
 });
 
 function createPad(size) {
+  removePad();
   for (let i = 0; i < size; i++) {
     const row = document.createElement("div");
 
@@ -64,6 +66,5 @@ function resize(event) {
     return;
   }
 
-  removePad();
   createPad(size);
 }
