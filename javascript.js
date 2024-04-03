@@ -1,12 +1,13 @@
 const sketch = document.querySelector("#sketch-container");
 const sizeButton = document.querySelector("#size-button");
 const opacityButton = document.querySelector("#opacity-button");
-let size = 32;
 let opacity = false;
 
+let size = 32;
 createPad(size);
 
 sizeButton.addEventListener("click", resize);
+
 opacityButton.addEventListener("click", () => {
   opacity ? (opacity = false) : (opacity = true);
 });
@@ -25,8 +26,9 @@ function createPad(size) {
 
       square.style.opacity = 1;
 
-      if (opacity) square.addEventListener("mouseover", etchProgressive);
-      else square.addEventListener("mouseover", etch);
+      opacity
+        ? square.addEventListener("mouseover", etchProgressive)
+        : square.addEventListener("mouseover", etch);
 
       row.appendChild(square);
     }
