@@ -12,12 +12,24 @@ createPad(size);
 sizeButton.addEventListener("click", resize);
 
 opacityButton.addEventListener("click", () => {
-  opacity ? (opacity = false) : (opacity = true);
+  if (opacity) {
+    opacity = false;
+    opacityButton.style.backgroundColor = "#e9e9ed";
+  } else {
+    opacity = true;
+    opacityButton.style.backgroundColor = "green";
+  }
   createPad(size);
 });
 
 colorfulButton.addEventListener("click", () => {
-  colorful ? (colorful = false) : (colorful = true);
+  if (colorful) {
+    colorful = false;
+    colorfulButton.style.backgroundColor = "#e9e9ed";
+  } else {
+    colorful = true;
+    colorfulButton.style.backgroundColor = "green";
+  }
   createPad(size);
 });
 
