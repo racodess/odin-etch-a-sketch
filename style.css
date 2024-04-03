@@ -8,10 +8,8 @@ body {
 }
 
 #sketch-container {
-  min-height: 500px;
-  max-height: 500px;
-  min-width: 500px;
-  max-width: 500px;
+  height: 500px;
+  width: 500px;
   display: flex;
   flex-direction: column;
 }
