@@ -16,8 +16,6 @@ function createPad(size) {
       const square = document.createElement("div");
 
       square.setAttribute("class", "square");
-      square.style.minHeight = "30px";
-      square.style.minWidth = "30px";
 
       square.addEventListener("mouseover", etch);
 
