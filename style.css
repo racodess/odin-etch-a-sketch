@@ -19,13 +19,17 @@ body {
   align-items: center;
   background-color: #ad0f1b;
   border-radius: 3%;
+  box-shadow:
+    2px 2px 2px #690910,
+    inset 4px 5px 6px rgb(0 0 0 / 30%),
+    inset -2px -3px 5px rgb(255 255 255 / 50%);
 }
 
 #case-text {
   font-family: "Londrina Sketch", sans-serif;
   font-size: 72px;
   color: gold;
-  margin-top: -80px;
+  margin-top: -50px;
 }
 
 #sketch-container {
@@ -34,6 +38,10 @@ body {
   display: flex;
   flex-direction: column;
   background-color: black;
+}
+
+#case-buttons {
+  padding: 20px;
 }
 
 .row {
@@ -48,4 +56,11 @@ body {
 
 button {
   background-color: #e9e9ed;
+  width: 130px;
+  border-radius: 10px;
+  border: none;
+  box-shadow:
+    1px 1px 1px black,
+    inset 4px 5px 6px rgb(0 0 0 / 30%),
+    inset -2px -3px 5px rgb(255 255 255 / 50%);
 }
