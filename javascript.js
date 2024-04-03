@@ -64,14 +64,12 @@ function etch(event) {
 }
 
 function etchProgressive(event) {
-  console.log(opacity);
   const square = event.target;
 
   square.style.opacity -= 0.3;
 }
 
 function etchColorful(event) {
-  console.log(colorful);
   const square = event.target;
 
   const r = Math.floor(Math.random() * 256);
