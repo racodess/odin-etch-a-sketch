@@ -17,6 +17,7 @@ function createPad(size) {
 
       square.setAttribute("class", "square");
 
+      square.style.opacity = 1;
       square.addEventListener("mouseover", etch);
 
       row.appendChild(square);
@@ -31,7 +32,13 @@ function removePad() {
 function etch(event) {
   const square = event.target;
 
-  square.style.backgroundColor = "black";
+  square.style.opacity = 0;
+}
+
+function etchProgressive(event) {
+  const square = event.target;
+
+  square.style.opacity -= 0.3;
 }
 
 function resize(event) {
