@@ -96,6 +96,7 @@ function resize(event) {
   );
 
   if (size < 16 || size > 100) {
+    size = 32;
     alert("Size must be a number from 16 to 100");
     return;
   }
