@@ -1,7 +1,10 @@
 const sketch = document.querySelector("#sketch-container");
 const sizeButton = document.querySelector("#size-button");
 const opacityButton = document.querySelector("#opacity-button");
+const colorfulButton = document.querySelector("#colorful-button");
+
 let opacity = false;
+let colorful = false;
 
 let size = 32;
 createPad(size);
@@ -10,6 +13,11 @@ sizeButton.addEventListener("click", resize);
 
 opacityButton.addEventListener("click", () => {
   opacity ? (opacity = false) : (opacity = true);
+  createPad(size);
+});
+
+colorfulButton.addEventListener("click", () => {
+  colorful ? (colorful = false) : (colorful = true);
   createPad(size);
 });
 
@@ -23,14 +31,10 @@ function createPad(size) {
 
     for (let i = 0; i < size; i++) {
       const square = document.createElement("div");
-
       square.setAttribute("class", "square");
 
       square.style.opacity = 1;
-
-      opacity
-        ? square.addEventListener("mouseover", etchProgressive)
-        : square.addEventListener("mouseover", etch);
+      pickMode(square, opacity, colorful);
 
       row.appendChild(square);
     }
@@ -48,9 +52,27 @@ function etch(event) {
 }
 
 function etchProgressive(event) {
+  console.log(opacity);
   const square = event.target;
 
   square.style.opacity -= 0.3;
+}
+
+function etchColorful(event) {
+  console.log(colorful);
+  const square = event.target;
+
+  const r = Math.floor(Math.random() * 256);
+  const g = Math.floor(Math.random() * 256);
+  const b = Math.floor(Math.random() * 256);
+
+  square.style.backgroundColor = `rgb(${r},${g},${b})`;
+}
+
+function pickMode(square, opacity, colorful) {
+  if (opacity) square.addEventListener("mouseover", etchProgressive);
+  if (colorful) square.addEventListener("mouseover", etchColorful);
+  else if (!opacity && !colorful) square.addEventListener("mouseover", etch);
 }
 
 function resize(event) {
